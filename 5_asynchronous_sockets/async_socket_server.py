@@ -1,8 +1,10 @@
 """
 This server users asynchronous sockets to accept connections and read from
 and write to sockets. This is non-blocking I/O, because the main process does
-not wait for a read or write to finish before performing other tasks, such as
-reading and writing to other sockets.
+not WAIT for a read or write TO FINISH before performing other tasks, such as
+reading and writing to other sockets. The FINISHING part is key here. You don't
+want to be waiting for your hard drive's arm to crank around to the next section
+when you could be spending that time serving another request, etc.
 
 NOTE: epoll is Linux only. So this won't run on Mac.
 """
