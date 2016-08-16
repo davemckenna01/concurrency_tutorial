@@ -7,6 +7,9 @@ want to be waiting for your hard drive's arm to crank around to the next section
 when you could be spending that time serving another request, etc.
 
 NOTE: epoll is Linux only. So this won't run on Mac.
+
+NOTE: libuv in C takes care of all this epoll spaghetti and provides a clean
+api for registering callbacks for events
 """
 
 import socket, select
